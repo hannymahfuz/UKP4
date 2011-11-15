@@ -1,0 +1,212 @@
+-- MySQL dump 10.13  Distrib 5.5.9, for Win32 (x86)
+--
+-- Host: localhost    Database: hanny_ukp4
+-- ------------------------------------------------------
+-- Server version	5.5.11
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Current Database: `hanny_ukp4`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `hanny_ukp4` /*!40100 DEFAULT CHARACTER SET latin1 */;
+
+USE `hanny_ukp4`;
+
+--
+-- Table structure for table `T_MAS_APPMNU`
+--
+
+DROP TABLE IF EXISTS `T_MAS_APPMNU`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `T_MAS_APPMNU` (
+  `MNU_APPLIC` varchar(10) NOT NULL,
+  `MNU_NOMORS` varchar(6) NOT NULL,
+  `MNU_DESCRE` varchar(100) DEFAULT NULL,
+  `MNU_GOURLS` varchar(60) DEFAULT NULL,
+  `MNU_REFERS` varchar(4) DEFAULT NULL,
+  `MNU_CHILDN` smallint(6) DEFAULT NULL,
+  `MNU_DCREAT` datetime DEFAULT NULL,
+  `MNU_HVCHLD` smallint(6) DEFAULT NULL,
+  PRIMARY KEY (`MNU_APPLIC`,`MNU_NOMORS`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `T_MAS_APPMNU`
+--
+
+LOCK TABLES `T_MAS_APPMNU` WRITE;
+/*!40000 ALTER TABLE `T_MAS_APPMNU` DISABLE KEYS */;
+INSERT INTO `T_MAS_APPMNU` VALUES ('20070314','010000','Beranda','#','0',0,NULL,0),('20070314','020000','Komentar','#','0',0,NULL,0),('20070314','030000','xxx','#','0',0,NULL,0),('20070314','040000','xxxx','#','0',0,NULL,0),('20070314','050000','Tentang Kami','#','0',0,NULL,0);
+/*!40000 ALTER TABLE `T_MAS_APPMNU` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `T_MAS_USERO`
+--
+
+DROP TABLE IF EXISTS `T_MAS_USERO`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `T_MAS_USERO` (
+  `USR_IDENTS` int(11) NOT NULL AUTO_INCREMENT,
+  `USR_NAMES` varchar(200) DEFAULT NULL,
+  `USR_EMAIL` varchar(200) DEFAULT NULL,
+  `USR_USRDT` datetime DEFAULT NULL,
+  PRIMARY KEY (`USR_IDENTS`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `T_MAS_USERO`
+--
+
+LOCK TABLES `T_MAS_USERO` WRITE;
+/*!40000 ALTER TABLE `T_MAS_USERO` DISABLE KEYS */;
+INSERT INTO `T_MAS_USERO` VALUES (1,'Carolina Rainintha','Carol@yahoo.com',NULL),(2,'Arriyadhul Qolbi','ArrQ@gmail.com',NULL);
+/*!40000 ALTER TABLE `T_MAS_USERO` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `T_WEB_COMENT`
+--
+
+DROP TABLE IF EXISTS `T_WEB_COMENT`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `T_WEB_COMENT` (
+  `COM_IDENTS` int(11) NOT NULL AUTO_INCREMENT,
+  `COM_USERS` varchar(200) DEFAULT NULL,
+  `COM_ARTIK` int(11) DEFAULT NULL,
+  `COM_SETUJ` int(11) DEFAULT NULL,
+  `COM_TIDKS` int(11) DEFAULT NULL,
+  `COM_COMEN` longtext,
+  PRIMARY KEY (`COM_IDENTS`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `T_WEB_COMENT`
+--
+
+LOCK TABLES `T_WEB_COMENT` WRITE;
+/*!40000 ALTER TABLE `T_WEB_COMENT` DISABLE KEYS */;
+INSERT INTO `T_WEB_COMENT` VALUES (1,'1',16489,120,11,'Jalur Busway di Jalan Juanda belum steril dari Kendaraan Bermotor'),(2,'2',16489,12,1,'Pagar di Depan Gedung BNI belum dibuka');
+/*!40000 ALTER TABLE `T_WEB_COMENT` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `T_WEB_UKP4D`
+--
+
+DROP TABLE IF EXISTS `T_WEB_UKP4D`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `T_WEB_UKP4D` (
+  `DET_IDENTS` int(11) NOT NULL AUTO_INCREMENT,
+  `DET_DATES` datetime DEFAULT NULL,
+  `DET_JNSIDN` smallint(6) DEFAULT NULL,
+  `DET_TITLEN` varchar(200) DEFAULT NULL,
+  `DET_TITLID` varchar(200) DEFAULT NULL,
+  `DET_JAWAB` varchar(200) DEFAULT NULL,
+  `DET_CAPAI` tinyint(4) DEFAULT NULL,
+  `DET_IMAGES` varchar(100) DEFAULT NULL,
+  `DET_UCREAT` varchar(20) DEFAULT NULL,
+  `DET_DCREAT` datetime DEFAULT NULL,
+  PRIMARY KEY (`DET_IDENTS`)
+) ENGINE=MyISAM AUTO_INCREMENT=16510 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `T_WEB_UKP4D`
+--
+
+LOCK TABLES `T_WEB_UKP4D` WRITE;
+/*!40000 ALTER TABLE `T_WEB_UKP4D` DISABLE KEYS */;
+INSERT INTO `T_WEB_UKP4D` VALUES (1,'2011-10-02 00:00:00',5,NULL,'Pemprov DKI melaporkan bahwa fungsi pedestrian (trotoar kota) sebagai jalur untuk pejalan kaki di Jakarta sudah terpulihkan 80%.','PEMPROVDKI',0,NULL,NULL,NULL),(2,'2011-10-15 00:00:00',5,NULL,'Peraturan mengenai parkir off-street siap dilaksanakan di seluruh jalan','DISHUB',1,NULL,NULL,NULL),(3,'2011-10-20 00:00:00',5,NULL,'Perbaikan Marka Jalan Selesai','Walikota',2,NULL,NULL,NULL),(4,'2011-09-13 00:00:00',1,NULL,'Jalan Tol Tambahan',NULL,NULL,NULL,NULL,NULL),(5,NULL,1,NULL,'Pengkajian perparkiran on-street dan penegakan hukum',NULL,NULL,NULL,NULL,NULL),(19,NULL,1,NULL,'Pemberlakuan ERP',NULL,NULL,NULL,NULL,NULL),(6,NULL,1,NULL,'Perbaikan Sarana Jalan',NULL,NULL,NULL,NULL,NULL),(20,NULL,1,NULL,'Pembatasan Kendaraan Bermotor',NULL,NULL,NULL,NULL,NULL),(7,NULL,2,NULL,'Lahan Park&Ride untuk mendukung KRL Jabodetabek',NULL,NULL,NULL,NULL,NULL),(8,NULL,2,NULL,'Meningkatkan kualitas dan merevitalisasi pedestrian way',NULL,NULL,NULL,NULL,NULL),(9,NULL,3,NULL,'Sterilisasi Jalur Busway',NULL,NULL,NULL,NULL,NULL),(10,NULL,3,NULL,'Penambahan jalur busway hingga 12 koridor',NULL,NULL,NULL,NULL,NULL),(11,NULL,3,NULL,'Harga Gas Khusus Transportasi',NULL,NULL,NULL,NULL,NULL),(12,NULL,3,NULL,'Restrukturisasi angkutan bus kecil yang tidak efisien',NULL,NULL,NULL,NULL,NULL),(13,NULL,3,NULL,'Re-Routing KRL Jabodetabek',NULL,NULL,NULL,NULL,NULL),(14,NULL,3,NULL,'Penertiban angkutan umum liar dan perhentian angkutan umum liar',NULL,NULL,NULL,NULL,NULL),(15,NULL,3,NULL,'Mempercepat pembangunan MRT',NULL,NULL,NULL,NULL,NULL),(16,NULL,3,NULL,'Double-Double Track Jalur Manggarai-Cikarang',NULL,NULL,NULL,NULL,NULL),(17,NULL,3,NULL,'Mempercepat KA Bandara',NULL,NULL,NULL,NULL,NULL),(18,NULL,3,NULL,'Integrasi KA dengan sistem transportasi massal',NULL,NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `T_WEB_UKP4D` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `T_WEB_UKP4M`
+--
+
+DROP TABLE IF EXISTS `T_WEB_UKP4M`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `T_WEB_UKP4M` (
+  `UKP_IDENTS` int(5) NOT NULL AUTO_INCREMENT,
+  `UKP_TYPESS` smallint(6) DEFAULT NULL,
+  `UKP_TITLEN` varchar(64) DEFAULT NULL,
+  `UKP_TITLID` varchar(64) DEFAULT NULL,
+  `UKP_TXT1EN` varchar(128) DEFAULT NULL,
+  `UKP_TXT2EN` text,
+  `UKP_TXT1ID` varchar(128) DEFAULT NULL,
+  `UKP_TXT2ID` text,
+  `UKP_IMAGES` varchar(72) DEFAULT NULL,
+  `UKP_GALLRY` mediumint(3) DEFAULT NULL,
+  `UKP_DATCRT` date DEFAULT NULL,
+  PRIMARY KEY (`UKP_IDENTS`)
+) ENGINE=MyISAM AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `T_WEB_UKP4M`
+--
+
+LOCK TABLES `T_WEB_UKP4M` WRITE;
+/*!40000 ALTER TABLE `T_WEB_UKP4M` DISABLE KEYS */;
+INSERT INTO `T_WEB_UKP4M` VALUES (1,1,NULL,'RENCANA AKSI DALAM 17 LANGKAH MENGATASI KEMACETAN JABODETABEK',NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `T_WEB_UKP4M` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `T_WEB_UKP4C`
+--
+
+DROP TABLE IF EXISTS `T_WEB_UKP4C`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `T_WEB_UKP4C` (
+  `CAT_IDENTS` int(11) NOT NULL AUTO_INCREMENT,
+  `CAT_JNSIDN` smallint(6) DEFAULT NULL,
+  `CAT_CODESS` smallint(6) DEFAULT NULL,
+  `CAT_DESCRE` varchar(100) DEFAULT NULL,
+  `CAT_DESCRI` varchar(100) DEFAULT NULL,
+  `T_WEB_UKP4Ccol` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`CAT_IDENTS`)
+) ENGINE=MyISAM AUTO_INCREMENT=49 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `T_WEB_UKP4C`
+--
+
+LOCK TABLES `T_WEB_UKP4C` WRITE;
+/*!40000 ALTER TABLE `T_WEB_UKP4C` DISABLE KEYS */;
+INSERT INTO `T_WEB_UKP4C` VALUES (1,1,1,'','Sarana dan Prasarana Transportasi',NULL),(2,1,2,'','Penataan Ruang',NULL),(3,1,3,'','Transportasi Publik',NULL),(4,1,4,'','Regulasi dan Governance',NULL),(5,1,5,'','Pengembalian Fungsi Trotoar / Pedesterian Way',NULL),(6,1,6,'','Penerapan ERP',NULL);
+/*!40000 ALTER TABLE `T_WEB_UKP4C` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2011-10-25  8:38:42

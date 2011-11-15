@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<f8k xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<monitor nid="2" name="Penanganan Transportasi Jabodetabek (2010-2011)">	
+		<prioritas code="L1" name="Kelompok Sarana dan Prasarana Transportasi">
+			<program code="P1" name="Memberlakukan electronic Road Pricing">
+				<renaksi code="A1" name="Penerbitan dasar hukum penerapan Electronic Road Pricing">
+					<kriteria_list>
+						<kriteria code="K1" name="Terbitnya dasar hukum penerapan Electronic Road Pricing di wilayah Provinsi DKI Jakarta, cross subsidy ke public transport">
+							<penanggung_jawab name="Direktorat Jenderal Perhubungan Darat Kementerian Perhubungan"/>
+							<instansi_terkait_list>
+								<instansi_terkait name="Kepolisian Republik Indonesia"/>
+								<instansi_terkait name="Pemerintah Kabupaten Bekasi"/>
+								<instansi_terkait name="Pemerintah Kabupaten Bogor"/>
+								<instansi_terkait name="Pemerintah Kabupaten Tangerang"/>
+								<instansi_terkait name="Pemerintah Kota Bekasi"/>
+								<instansi_terkait name="Pemerintah Kota Bogor"/>
+								<instansi_terkait name="Pemerintah Kota Depok"/>
+								<instansi_terkait name="Pemerintah Kota Tangerang Selatan"/>
+								<instansi_terkait name="Pemerintah Provinsi Banten"/>
+								<instansi_terkait name="Pemerintah Provinsi DKI Jakarta"/>
+								<instansi_terkait name="Pemerintah Provinsi Jawa Barat"/>
+							</instansi_terkait_list>							
+						</kriteria>
+					</kriteria_list>
+				</renaksi>
+				<renaksi code="A2" name="Usulan penetapan wilayah Electronic Road Pricing di DKI">
+				</renaksi>
+				<renaksi code="A3" name="Sosialisasi kebijakan Electronic Road Pricing di wilayah Provinsi DKI">
+				</renaksi>
+				<renaksi code="A4" name="Penyediaan dan pemasangan sarana-prasarana Electronic Road Pricing">
+				</renaksi>
+			</program>
+			<program code="P2" name="Mengkaji kebijakan perparkiran on street dan penegakan hukum">
+			</program>			
+		</prioritas>
+	</monitor>
+</f8k>
